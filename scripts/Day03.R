@@ -160,7 +160,7 @@
     )
   
   # save map as png
-  ggsave("outputs/test_03-Aki-Polygons.png",
+  ggsave("outputs/03-Aki-Polygons.png",
          plot = philly_ward_map,
          width = 5, height = 5, units = "in")
   
