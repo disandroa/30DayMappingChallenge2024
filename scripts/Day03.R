@@ -80,10 +80,10 @@
     
     # annotations
     annotation_lowest <- glue("
-    Lowest Voter Turnout:\n
+    **Lowest Voter Turnout**:\n
     Ward 27, 39.9%")
     annotation_highest <- glue("
-    Highest Voter Turnout:\n
+    **Highest Voter Turnout**:\n
     Ward 9, 80.1%")
     annotation_subtitle <- glue("Colored by **Voter Turnout** at the 2020 General Election\n
                          ranging from <span style='color:{lightgreen};'>**39.9%**</span> to <span style='color:{darkgreen};'>**80.1%**</span>.")
@@ -96,8 +96,8 @@
     geom_sf(data = to_map, aes(fill = turnout), color = "transparent") +
     
     # add surrounding counties
-    geom_sf(data = nj_tracts, fill = "lightgrey", color = "darkgrey") +
-    geom_sf(data = pa_tracts, fill = "lightgrey", color = "darkgrey") +
+    geom_sf(data = nj_tracts, fill = "#555555", color = "lightgrey") +
+    geom_sf(data = pa_tracts, fill = "#555555", color = "lightgrey") +
     
     # add hydrology
     geom_sf(data = hydro, fill = "#96dbe3", color = "transparent") +
@@ -121,46 +121,47 @@
          30-Day Map Challenge\n
          Day 3: Polygons\n
          Author: Akira Di Sandro\n
+         Source: OpenDataPhilly\n
          R Packages used: tidyverse, sf, tidycensus, ggtext, glue"
     ) +
     
     # add annotations + label
-    annotate("text", x = 2641928, y = 233598, label = annotation_lowest, 
-             size = 4, lineheight = 0.5, color = "#9ec799", hjust = 0, family = "AppleGothic") +
-    annotate("text", x = 2683674, y = 298863, label = annotation_highest, 
-             size = 4, lineheight = 0.5, color = "#093d02", hjust = 0, family = "AppleGothic") +
+    geom_richtext(aes(x = 2641928, y = 233598, label = annotation_lowest),
+                  size = 5/.pt, lineheight = 0.5, color = "#9ec799", hjust = 0, family = "AppleGothic",
+                  fill = NA, label.color = NA) +
+    geom_richtext(aes(x = 2683674, y = 295230, label = annotation_highest),
+                  size = 5/.pt, lineheight = 0.5, color = "#093d02", hjust = 0, family = "AppleGothic",
+                  fill = NA, label.color = NA) +
     geom_richtext(aes(x = 2633578, y = 308204, label = annotation_subtitle), 
-                  size = 16/.pt, color = "black", hjust = 0, family = "AppleGothic",
-                  fill = NA, lineheight = 0.5,
-                  label.color = NA) +
+                  size = 10/.pt, lineheight = 0.5, color = "black", hjust = 0, family = "AppleGothic",
+                  fill = NA, label.color = NA) +
     
     # add lines to annotations
-    geom_segment(aes(x = 2668168, xend = 2680096, y = 233598, yend = 234598), color = "coral", size = 0.3) +
+    geom_segment(aes(x = 2662920, xend = 2680096, y = 233598, yend = 234598), color = "coral", size = 0.3) +
     geom_segment(aes(x = 2676518, xend = 2683078, y = 285198, yend = 295230), color = "coral", size = 0.3) +
     
     # define map theme
     theme_void() +
     theme(plot.title = element_text(face = "bold", 
-                                    size = 24, 
-                                    margin = margin(20, 20, -100, 20), 
+                                    size = 20, 
+                                    margin = margin(10, 0, -50, 10), 
                                     hjust = 0,
                                     family = "AppleGothic"),
           legend.position = "none",
           plot.caption = element_text(face = "italic",
-                                      size = 7,
+                                      size = 5,
                                       hjust = 1,
-                                      margin = margin(-50, 30, 10, 0),
+                                      margin = margin(-40, 20, 0, 0),
                                       lineheight = 0.5,
                                       family = "AppleGothic"),
-          plot.background = element_rect(fill = "lightgray"),
-          panel.background = element_rect(fill = "lightgray")
+          plot.background = element_rect(fill = "#555555"),
+          panel.background = element_rect(fill = "#555555"),
+          plot.margin = margin(0, 0, 0, 0)
     )
   
-  # still figuring out how to print the map with my desired resolution. for now, i uploaded a screenshot as a png
   # save map as png
-  # png("outputs/test_03-Aki-Polygons.png",
-  #     width = 600, height = 600, units = "px", res = 300)
-  # philly_ward_map
-  # dev.off()
+  ggsave("outputs/test_03-Aki-Polygons.png",
+         plot = philly_ward_map,
+         width = 5, height = 5, units = "in")
   
 }
