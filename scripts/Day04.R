@@ -9,13 +9,14 @@
 # set-up ----
 {
   # load packages
-  
+  library(tidyverse)
+  library(sf)
   
 }
 
 # load data ----
 {
-  
+  jpn <- st_read("~/Downloads/L02-22_19_GML/L02-22_19.geojson")
 }
 
 # data wrangling ----

@@ -1,5 +1,6 @@
 # 30-Day Mapping Challenge
-# Day 3
+# Day 3: Polygons
+# Plotting the Political Wards of Philadelphia County with a choropleth showing voter turnout from the 2020 General Election
 
 # Akira Di Sandro
 # start date: 2024-11-03
