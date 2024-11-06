@@ -43,9 +43,9 @@
                         .default = 20), # circle if alone
       # adjust text size according to my duration of stay in each location;
       textsize = case_when(duration <= .5 ~ 3, # 1 if i was there less than half of the day
-                           duration <= 1 ~ 3.6, # 1.2 if i was there for more than half the day but no more than one whole day
-                           duration <= 2 ~ 4.2, # 1.4 if i was there for more than 1 day but no more than two days
-                           .default = 4.8), # 1.6 if i was there for more than 2 days
+                           duration <= 1 ~ 3.5, # 1.2 if i was there for more than half the day but no more than one whole day
+                           duration <= 2 ~ 4, # 1.4 if i was there for more than 1 day but no more than two days
+                           .default = 4.5), # 1.6 if i was there for more than 2 days
       # adjust flight color depending on leg of trip
       # flight_col = case_when(leg == "trip1" ~ "darkred",
       #                        leg == "trip2" ~ "coral3",
@@ -58,16 +58,19 @@
                               flight_dur <= 10 ~ .5,
                               .default = .7),
       # specify location of text labels (specifically wanted to move Chicago and SF)
-      text_lat = case_when(City == "Chicago" ~ Latitude + 1.5,
-                           City == "San Francisco" ~ Latitude - 5,
-                           City == "Brisbane" ~ Latitude - 5,
+      text_lat = case_when(City == "Chicago" ~ Latitude + 1.75,
+                           City == "San Francisco" ~ Latitude - 7,
+                           City == "Brisbane" ~ Latitude - 4,
                            City == "Tokyo" ~ Latitude - 2,
                            City == "Manila" ~ Latitude + 1.7,
+                           City == "Yogyakarta" ~ Latitude - 1.7,
                            .default = Latitude),
-      text_lon = case_when(City == "Chicago" ~ lon + 3,
+      text_lon = case_when(City == "Chicago" ~ lon + 5,
                            City == "Tokyo" ~ lon + 3,
                            City == "Manila" ~ lon + 4,
                            City == "Jakarta" ~ lon - 3,
+                           City == "Depansar" ~ lon + 7,
+                           City == "Yogyakarta" ~ lon - 5,
                            .default = lon)
       )
   
@@ -133,8 +136,8 @@
            ) +
       theme(
         plot.title = element_text(face = "bold", 
-                                  size = 16, 
-                                  margin = margin(60, 0, -100, 80), 
+                                  size = 15, 
+                                  margin = margin(60, 0, -100, 65), 
                                   hjust = 0,
                                   color = "coral",
                                   family = "AppleGothic"),
