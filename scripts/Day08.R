@@ -269,7 +269,7 @@
          Day 8: Humanitarian Data Exchange (HDX)\n
          Author: Akira Di Sandro\n
          Source: HDX, World Bank Group Data Catalog\n
-         R Packages used: tidyverse, sf, biscale, stringr, glue, ggtext, cowplot") +
+         R Packages used: tidyverse, sf, biscale, stringr, glue, ggtext, cowplot, rnaturalearth") +
     
     # adjust theme
     theme_void() +
