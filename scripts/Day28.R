@@ -1,5 +1,5 @@
 # 30-Day Mapping Challenge
-# Day 28
+# Day 28: Blue Planet
 # Mapping the Great Lakes with a description of their importance to Native American societies.
 
 # Akira Di Sandro

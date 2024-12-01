@@ -1,5 +1,5 @@
 # 30-Day Mapping Challenge
-# Day 8
+# Day 8: HDX
 # I visited the DRC (specifically the Lubumbashi and Kolwezi areas) in the summer of 2023, not educated on 
 # the modern-day slavery going on in mines nearby. I wanted to make a map demonstrating where violence is 
 # occurring in DRC provinces compared to where healthzones are located to visualize which areas of DRC need 
