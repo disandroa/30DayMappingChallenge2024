@@ -73,9 +73,7 @@
   bikelane <- "#0E84B4FF"
   buffered <- "#58A449ff"
   
-  # annotation for rivers
-  text_schu <- "Schuylkill River"
-  text_dela <- "Delaware River"
+  # annotation
   text_description <- glue("Most streets are <span style='color:{bikefriendly};'>**bike friendly**</span> or <span style='color:{shared};'>**shared**</span> between autos\n
                            and bikes. There are also several streets with <span style='color:{bikelane};'>**bike lanes**</span>\n
                            and very few thaat have <span style='color:{buffered};'>**buffered bike lanes**</span>. As a\n
