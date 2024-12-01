@@ -24,7 +24,7 @@
 
 # load data ----
 {
-  bikes <- st_read("~/Downloads/PhiladelphiaBikeNetwork_SupportingDatasets201209/BikeNetwork_SupportingDatasets201209/PhiladelphiaBikeConnectorStreets201204.shp")
+  bikes <- st_read("data/day02_data/PhiladelphiaBikeNetwork_SupportingDatasets201209/BikeNetwork_SupportingDatasets201209/PhiladelphiaBikeConnectorStreets201204.shp")
   
   # source: https://opendataphilly.org/datasets/hydrology/
   hydro <- st_read("https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Hydrographic_Features_Poly/FeatureServer/1/query?outFields=*&where=1%3D1&f=geojson") %>% 
