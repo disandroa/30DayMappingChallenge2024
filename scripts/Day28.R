@@ -138,7 +138,7 @@
     }
     
     loc_ill <- getNACoords("illinois")
-    loc_sus <- getNACoords("neutral")
+    loc_neu <- getNACoords("neutral")
     loc_iro <- getNACoords("iroquois")
     loc_sus <- getNACoords("susquehannock")
     loc_erie <- getNACoords("erie")
